@@ -10,6 +10,17 @@ type MapProps = {
   zoom: number
 }
 
+type  clinicProps = {
+  coordinate: {
+    latitude: number,
+    longitude: number
+  },
+  name: string,
+  dentists: number,
+  address: string,
+  city: string
+}
+
 
 const useStyles = makeStyles({
   map: {
@@ -40,7 +51,7 @@ function Map({ center, zoom }: MapProps) {
   }, [center, zoom]);
 
   return <div ref={ref} id="map" className={classes.map}>
-    {Clinics.map((clinic: { coordinate: { latitude: any; longitude: any; }; name: string; dentists: number; address: string; city: string; }, index: number) => (
+    {Clinics.map((clinic: clinicProps, index: number) => (
       <OverlayContainer
         map={map}
         position={{
@@ -59,5 +70,4 @@ function Map({ center, zoom }: MapProps) {
     ))}
   </div>;
 }
-
 export default Map

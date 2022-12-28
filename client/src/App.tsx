@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <Router>
       <Wrapper apiKey={'AIzaSyATMY5GYUwukHd29ka5l0DM2R8goauAp0g'} render={render}>
-        <BookAppointment />
+{/*        <BookAppointment />*/} <Home />
       </Wrapper>
       <Routes>
         <Route path='/appointments' element={<BookAppointment />}/>

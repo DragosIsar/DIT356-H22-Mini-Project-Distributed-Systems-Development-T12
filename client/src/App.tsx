@@ -16,7 +16,6 @@ const render = (status: Status): ReactElement => {
 
 function App() {
   return (
-    
     <div className="App">
       <Router>
       <Wrapper apiKey={'AIzaSyATMY5GYUwukHd29ka5l0DM2R8goauAp0g'} render={render}>

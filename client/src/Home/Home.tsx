@@ -103,6 +103,7 @@ const Home = () => {
         <ContentBox>
           <Content2>
             <h3>Choose a Clinic:</h3>
+            {/* @ts-expect-error Server Component */}
             <Map center={{ lat: 57.7017373, lng: 11.9707837 }} zoom={13} />
           </Content2>
           <Content1>

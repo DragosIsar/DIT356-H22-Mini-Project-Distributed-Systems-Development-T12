@@ -5,7 +5,6 @@ const AWS = require('aws-sdk');
 
 const ddb = new AWS.DynamoDB({ apiVersion: "2012-10-08"})
 exports.handler = async (event, context, callback) => {
-
     const params = { 
       TableName: "DentistimoClinicsTable",
       ProjectionExpression: "#name, #owner, address, openinghours",

@@ -1,4 +1,5 @@
 import React, { Component, useState, useEffect } from 'react'
+import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 
 const Content1 = styled.div`
@@ -53,6 +54,12 @@ const Home = () => {
     handleClick = true;
   }
 
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path = `/appointments`; 
+    navigate(path);
+  }
+
   /* If there is no selected clinic or no selected date, the button should be disabled
   ** if (!data || !selectedDate)
   **/
@@ -65,7 +72,9 @@ const Home = () => {
         <h4>Address: {data[2]}, {data[3]}</h4>
         <h4>Dentists: {data[1]}</h4>        
         <h4>Opening hours:</h4>
-        <Button disabled={handleClick}
+        <Button 
+          disabled={handleClick} 
+          onClick={routeChange}
         >
             Search Times
         </Button>

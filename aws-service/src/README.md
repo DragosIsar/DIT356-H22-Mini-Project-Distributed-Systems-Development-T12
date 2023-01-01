@@ -2,6 +2,40 @@
 
 
 
+## Database Specification
+Clinics Table
+```
+{
+  clinicId : number,	
+  name: string,
+  owner: string,
+  dentists: number,
+  address: string,
+  city: string,
+  coordinate: {
+    latitude: number,
+    longitude: number
+  },
+  openingHours: {
+    monday: string,
+    tuesday: string,
+    wednesday: string,
+    thursday: string,
+    friday: string,
+    saturday: string,
+    sunday: string
+  }
+}
+```
+
+Schedule Table
+```
+  {clinicId : number,	
+  date: number,
+  timeSlots: Array<{ bookings: Array<string> , time: string}>
+}
+```
+
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.

@@ -65,7 +65,10 @@ const Home = () => {
         <h4>Address: {data[2]}, {data[3]}</h4>
         <h4>Dentists: {data[1]}</h4>        
         <h4>Opening hours:</h4>
-        <Button disabled={handleClick}>Search Times</Button>
+        <Button disabled={handleClick}
+        >
+            Search Times
+        </Button>
     </Content1>
   );
 }

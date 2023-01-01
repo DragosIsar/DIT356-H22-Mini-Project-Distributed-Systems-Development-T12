@@ -1,13 +1,23 @@
 import { makeStyles } from "@material-ui/core";
+import { Component, ChangeEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 import Clinics from "./clinics";
+
+import { clinicApi } from '../services/clinic'
 import MapPoint from "./MapPoint";
 import OverlayContainer from "./OverlayContainer";
+import ClinicProps from '../Types/ClinicsTypes';
+import { responsiveProperty } from "@mui/material/styles/cssUtils";
 
 type MapProps = {
   center: google.maps.LatLngLiteral
   zoom: number
 }
+
+type GetClinicsResponse = {
+  data: ClinicProps[];
+}
+
 
 const useStyles = makeStyles({
   map: {
@@ -20,6 +30,9 @@ function Map({ center, zoom }: MapProps) {
   const ref = useRef(null);
   const [map, setMap] = useState<google.maps.Map<Element> | null>(null)
   const classes = useStyles();
+
+  const Clinicss = clinicApi.getAllClinics();
+  console.log(Clinicss);
 
   useEffect(() => {
     if (ref.current) { 
@@ -37,7 +50,7 @@ function Map({ center, zoom }: MapProps) {
   }, [center, zoom]);
 
   return <div ref={ref} id="map" className={classes.map}>
-    {Clinics.map((clinic, index) => (
+    {Clinics.map((clinic : ClinicProps, index : number) => (
       <OverlayContainer
         map={map}
         position={{

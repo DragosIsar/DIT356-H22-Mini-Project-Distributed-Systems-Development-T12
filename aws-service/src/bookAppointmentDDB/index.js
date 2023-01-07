@@ -322,7 +322,7 @@ const denialMail = async function (event, message) {
     Message: {
       Body: {
         Text: { Data: "Hello! We regret to inform you that your booking request for " + event.date + 
-            " at " + event.time + " cannot be completed, " + message + " Please try again."},
+            " at " + event.time + " cannot be completed, " + message + " Please try again." + "http://localhost:3000/"},
       },
       Subject: { Data: "Unsuccessful booking request" },
     },

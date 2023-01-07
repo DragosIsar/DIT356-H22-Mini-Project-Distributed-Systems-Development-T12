@@ -32,7 +32,7 @@ var response = {
         "content-type" : "application/json",
         "Access-Control-Allow-Headers" : "Content-Type",
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "OPTIONS,POST,GET"s
+        "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
     }
 };
 
